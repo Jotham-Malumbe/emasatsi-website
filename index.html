@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emasatsi Electronics Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float">
+    Chat with us on WhatsApp
+</a>
+<body>
+    <!-- Header: Navigation and Logo -->
+    <header>
+        <div class="container">
+            <h1>Emasatsi Electronics</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <h2>Quality Electronics at Emasatsi Market</h2>
+            <p>Discover the best earphones, torches, earpods, and more at unbeatable prices.</p>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="featured-products">
+            <h2>Our Popular Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product">
+                    <img src="images/earphones.jpg" alt="High-quality Earphones">
+                    <h3>High-quality Earphones</h3>
+                    <p>Comfortable and durable earphones with crystal-clear sound. Perfect for music lovers.</p>
+                </article>
+                <!-- Product 2 -->
+                <article class="product">
+                    <img src="images/torch.jpg" alt="LED Torch">
+                    <h3>LED Torch</h3>
+                    <p>Bright and long-lasting torch for all your outdoor and indoor needs.</p>
+                </article>
+                <!-- Product 3 -->
+                <article class="product">
+                    <img src="images/earpods.jpg" alt="Wireless Earpods">
+                    <h3>Wireless Earpods</h3>
+                    <p>Stylish wireless earpods with excellent battery life and superior sound quality.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section Preview -->
+        <section id="about-preview">
+            <h2>About Us</h2>
+            <p>Located in the heart of Emasatsi Market, we provide the latest electronics at affordable prices. <a href="about.html">Read more</a></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
+    </footer>
+    const headerHeight = document.querySelector('header').offsetHeight;
+
+// Smooth scrolling only
+document.querySelectorAll('nav ul li a').forEach(link => {
+    const targetId = link.getAttribute('href');
+    if (targetId.startsWith('#')) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            const sectionPosition = targetSection.offsetTop - headerHeight;
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+</body>
+</html>

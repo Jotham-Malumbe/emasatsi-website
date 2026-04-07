@@ -1,0 +1,240 @@
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background-color: #1f1f1f; /* dark tech gray for electronics feel */
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #00C853; /* bright green accent */
+}
+
+/* ===== Fix header-to-body gap ===== */
+main > section:first-child > *:first-child {
+    margin-top: 0; /* remove top margin from first element in first section */
+}
+
+/* ===== Section spacing ===== */
+section:not(:first-child) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* ===== Hero Section ===== */
+#hero {
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+}
+
+/* ===== Products Grid ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.product h3 {
+    margin-bottom: 12px;
+    color: #00C853;
+}
+
+.product p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== About & Contact Sections ===== */
+#about, #contact {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+#about h2, #contact h2 {
+    color: #00C853;
+    margin-bottom: 20px;
+}
+
+#about p, #contact p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* ===== WhatsApp Buttons ===== */
+.whatsapp-button,
+.whatsapp-footer {
+    display: inline-block;
+    background-color: #25D366;
+    color: #fff !important;
+    padding: 12px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 12px 0;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.whatsapp-button:hover,
+.whatsapp-footer:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+}
+
+/* ===== Floating WhatsApp Button ===== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 15px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #00C853;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Headings Reset ===== */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0; /* prevents extra top margin by default */
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    .product img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .whatsapp-float {
+        padding: 12px 18px;
+    }
+}
