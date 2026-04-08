@@ -79,25 +79,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script>
-    // Select all product cards
-    const products = document.querySelectorAll('.product');
-
-    // Intersection Observer setup
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('visible'); // trigger animation
-                observer.unobserve(entry.target); // optional: stop observing after visible
-            }
-        });
-    }, { threshold: 0.2 }); // trigger when 20% of the product is visible
-
-    // Observe each product
-    products.forEach(product => {
-        observer.observe(product);
-    });
-</script>
+    
     <script>
         const headerHeight = document.querySelector('header').offsetHeight;
 
