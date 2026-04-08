@@ -6,10 +6,13 @@
     <title>Emasatsi Electronics Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<a href="https://wa.me/+254115652612" target="_blank" class="whatsapp-float">
-    Chat with us on WhatsApp
-</a>
+
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/254115652612" target="_blank" class="whatsapp-float">
+        Chat with us on WhatsApp
+    </a>
+
     <!-- Header: Navigation and Logo -->
     <header>
         <div class="container">
@@ -43,12 +46,14 @@
                     <h3>High-quality Earphones</h3>
                     <p>Comfortable and durable earphones with crystal-clear sound. Perfect for music lovers.</p>
                 </article>
+
                 <!-- Product 2 -->
                 <article class="product">
                     <img src="images/torch.jpg" alt="LED Torch">
                     <h3>LED Torch</h3>
                     <p>Bright and long-lasting torch for all your outdoor and indoor needs.</p>
                 </article>
+
                 <!-- Product 3 -->
                 <article class="product">
                     <img src="images/earpods.jpg" alt="Wireless Earpods">
@@ -61,7 +66,10 @@
         <!-- About Section Preview -->
         <section id="about-preview">
             <h2>About Us</h2>
-            <p>Located in the heart of Emasatsi Market, we provide the latest electronics at affordable prices. <a href="about.html">Read more</a></p>
+            <p>
+                Located in the heart of Emasatsi Market, we provide the latest electronics at affordable prices.
+                <a href="about.html">Read more</a>
+            </p>
         </section>
     </main>
 
@@ -69,22 +77,26 @@
     <footer>
         <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
     </footer>
-    const headerHeight = document.querySelector('header').offsetHeight;
 
-// Smooth scrolling only
-document.querySelectorAll('nav ul li a').forEach(link => {
-    const targetId = link.getAttribute('href');
-    if (targetId.startsWith('#')) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetSection = document.querySelector(targetId);
-            const sectionPosition = targetSection.offsetTop - headerHeight;
-            window.scrollTo({
-                top: sectionPosition,
-                behavior: 'smooth'
-            });
+    <!-- JavaScript -->
+    <script>
+        const headerHeight = document.querySelector('header').offsetHeight;
+
+        // Smooth scrolling only
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            const targetId = link.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    const sectionPosition = targetSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: sectionPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            }
         });
-    }
-});
+    </script>
 </body>
 </html>
