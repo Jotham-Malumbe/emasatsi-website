@@ -67,7 +67,7 @@ section:not(:first-child) {
 /* ===== Hero Section ===== */
 #hero {
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: blue;
     text-align: center;
     padding: 60px 20px;
     border-radius: 10px;
