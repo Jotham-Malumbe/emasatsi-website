@@ -13,13 +13,13 @@
         Chat with us on WhatsApp
     </a>
 
-    <!-- Header: Navigation and Logo -->
+    <!-- Header -->
     <header>
         <div class="container">
             <h1>Emasatsi Electronics</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -28,62 +28,96 @@
         </div>
     </header>
 
-    <!-- Main Section -->
+    <!-- Main Content -->
     <main>
         <!-- Hero Section -->
         <section id="hero">
             <h2>Quality Electronics at Emasatsi Market</h2>
             <p>Discover the best earphones, torches, earpods, and more at unbeatable prices.</p>
+            <a href="products.html" class="hero-btn">Shop Now</a>
         </section>
 
         <!-- Featured Products Section -->
         <section id="featured-products">
             <h2>Our Popular Products</h2>
+
+            <!-- Search Bar -->
+            <div class="product-search">
+                <input type="text" id="searchInput" placeholder="Search products...">
+            </div>
+
             <div class="products-grid">
                 <!-- Product 1 -->
                 <article class="product">
                     <img src="images/earphones.jpg" alt="High-quality Earphones">
                     <h3>High-quality Earphones</h3>
-                    <p>Comfortable and durable earphones with crystal-clear sound. Perfect for music lovers.</p>
+                    <p class="price">KES 800</p>
+                    <p>Comfortable and durable earphones with crystal-clear sound.</p>
+                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20High-quality%20Earphones" target="_blank" class="order-btn">Order on WhatsApp</a>
                 </article>
 
                 <!-- Product 2 -->
                 <article class="product">
                     <img src="images/torch.jpg" alt="LED Torch">
                     <h3>LED Torch</h3>
-                    <p>Bright and long-lasting torch for all your outdoor and indoor needs.</p>
+                    <p class="price">KES 600</p>
+                    <p>Bright and long-lasting torch for outdoor and home use.</p>
+                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20LED%20Torch" target="_blank" class="order-btn">Order on WhatsApp</a>
                 </article>
 
                 <!-- Product 3 -->
                 <article class="product">
                     <img src="images/earpods.jpg" alt="Wireless Earpods">
                     <h3>Wireless Earpods</h3>
-                    <p>Stylish wireless earpods with excellent battery life and superior sound quality.</p>
+                    <p class="price">KES 1,500</p>
+                    <p>Stylish wireless earpods with excellent battery life.</p>
+                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Wireless%20Earpods" target="_blank" class="order-btn">Order on WhatsApp</a>
                 </article>
             </div>
         </section>
 
-        <!-- About Section Preview -->
+        <!-- Categories Preview -->
+        <section id="categories-preview">
+            <h2>Shop by Category</h2>
+            <div class="categories-grid">
+                <a href="products.html#earphones" class="category-card">Earphones</a>
+                <a href="products.html#powerbanks" class="category-card">Power Banks</a>
+                <a href="products.html#speakers" class="category-card">Speakers</a>
+            </div>
+        </section>
+
+        <!-- About Preview -->
         <section id="about-preview">
             <h2>About Us</h2>
             <p>
                 Located in the heart of Emasatsi Market, we provide the latest electronics at affordable prices.
-                <a href="about.html">Read more</a>
             </p>
+            <a href="about.html" class="cta-btn">Read More</a>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"Fast delivery and excellent earphones! – Jane K."</p>
+            </div>
+            <div class="testimonial">
+                <p>"High-quality products and amazing service. – Samuel M."</p>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
+        <p>Contact us on <a href="https://wa.me/254115652612">WhatsApp</a></p>
     </footer>
 
     <!-- JavaScript -->
-    
     <script>
         const headerHeight = document.querySelector('header').offsetHeight;
 
-        // Smooth scrolling only
+        // Smooth scrolling for internal links
         document.querySelectorAll('nav ul li a').forEach(link => {
             const targetId = link.getAttribute('href');
             if (targetId.startsWith('#')) {
@@ -91,12 +125,26 @@
                     e.preventDefault();
                     const targetSection = document.querySelector(targetId);
                     const sectionPosition = targetSection.offsetTop - headerHeight;
-                    window.scrollTo({
-                        top: sectionPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
                 });
             }
+        });
+
+        // Product Search Filter (static)
+        const searchInput = document.getElementById('searchInput');
+        const products = document.querySelectorAll('.products-grid .product');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            products.forEach(product => {
+                const title = product.querySelector('h3').textContent.toLowerCase();
+                const desc = product.querySelector('p').textContent.toLowerCase();
+                if(title.includes(query) || desc.includes(query)) {
+                    product.style.display = '';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
         });
     </script>
 </body>
