@@ -147,5 +147,30 @@
             });
         });
     </script>
+    <script>
+// ===== Product Search Function =====
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const products = document.querySelectorAll('.product');
+
+    // Check if searchInput exists on the page
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+
+            products.forEach(product => {
+                const title = product.querySelector('h3').textContent.toLowerCase();
+                const description = product.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(query) || description.includes(query)) {
+                    product.style.display = 'flex'; // show product
+                } else {
+                    product.style.display = 'none'; // hide product
+                }
+            });
+        });
+    }
+});
+</script>
 </body>
 </html>
