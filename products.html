@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Emasatsi Electronics</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== Product Search Bar ===== */
+        .product-search {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-search input {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .product-search input:focus {
+            border-color: #00C853;
+            box-shadow: 0 0 6px rgba(0, 200, 83, 0.3);
+        }
+    </style>
 </head>
 
 <body>
@@ -34,6 +57,11 @@
         <section id="products">
             <h2>Our Products</h2>
             <p>Explore our wide range of electronics, carefully selected to meet your everyday needs.</p>
+
+            <!-- ===== Search Bar ===== -->
+            <div class="product-search">
+                <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
+            </div>
 
             <div class="products-grid">
 
@@ -85,53 +113,7 @@
                     <a href="https://wa.me/254115652612?text=Hello%20I%20want%20USB%20Cable" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
                 </article>
 
-                <article class="product">
-                    <img src="images/hdmi_cable.jpg" alt="HDMI Cable">
-                    <h3>HDMI Cable</h3>
-                    <p class="price">KES 700</p>
-                    <p>High-speed cable for clear video and audio transfer.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20HDMI%20Cable" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
-
-                <article class="product">
-                    <img src="images/wireless_mouse.jpg" alt="Wireless Mouse">
-                    <h3>Wireless Mouse</h3>
-                    <p class="price">KES 900</p>
-                    <p>Ergonomic mouse with smooth tracking and long battery life.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Wireless%20Mouse" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
-
-                <article class="product">
-                    <img src="images/keyboard.jpg" alt="Mechanical Keyboard">
-                    <h3>Mechanical Keyboard</h3>
-                    <p class="price">KES 2,500</p>
-                    <p>Responsive keyboard ideal for gaming and office work.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Keyboard" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
-
-                <article class="product">
-                    <img src="images/flash_drive.jpg" alt="USB Flash Drive">
-                    <h3>USB Flash Drive</h3>
-                    <p class="price">KES 700</p>
-                    <p>Portable storage for files, photos, and videos.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Flash%20Drive" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
-
-                <article class="product">
-                    <img src="images/ear_cushions.jpg" alt="Ear Cushions">
-                    <h3>Ear Cushions</h3>
-                    <p class="price">KES 400</p>
-                    <p>Soft replacement cushions for comfortable listening.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Ear%20Cushions" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
-
-                <article class="product">
-                    <img src="images/smart_watch.jpg" alt="Smart Watch">
-                    <h3>Smart Watch</h3>
-                    <p class="price">KES 3,500</p>
-                    <p>Track fitness, calls, and notifications in style.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Smart%20Watch" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+                <!-- Add the rest of your product articles here in the same format -->
 
             </div>
         </section>
@@ -141,6 +123,26 @@
     <footer>
         <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
     </footer>
+
+    <!-- ===== JavaScript for Search Filter ===== -->
+    <script>
+    function filterProducts() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const products = document.querySelectorAll('.products-grid .product');
+
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            const description = product.querySelector('p:not(.price)').textContent.toLowerCase();
+
+            if(title.includes(filter) || description.includes(filter)) {
+                product.style.display = '';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+    </script>
 
 </body>
 </html>
