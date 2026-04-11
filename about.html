@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Emasatsi Electronics</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<a href="https://wa.me/+254115652612" target="_blank" class="whatsapp-float">
-    Chat with us on WhatsApp
-</a>
+
 <body>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+254115652612" target="_blank" class="whatsapp-float">
+        Chat on WhatsApp
+    </a>
+
     <!-- Header -->
     <header>
         <div class="container">
             <h1>Emasatsi Electronics</h1>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
@@ -25,30 +30,66 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Your Trusted Electronics Store</h2>
+            <p>Quality gadgets at affordable prices in Emasatsi Market</p>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main>
-        <section id="about">
-            <h2>About Emasatsi Electronics</h2>
-            <p>Welcome to <strong>Emasatsi Electronics</strong>, your trusted electronics store in Emasatsi Market. We have been serving the community for over 5 years, providing high-quality earphones, torches, earpods, and a wide range of electronics at competitive prices.</p>
-            
+        <section id="about" class="container">
+
+            <h2>About Us</h2>
+
+            <p>
+                Welcome to <strong>Emasatsi Electronics</strong>, your trusted electronics store located in 
+                Emasatsi Market. We have proudly served the community for over 5 years, offering reliable 
+                and affordable electronics including earphones, torches, earpods, and more.
+            </p>
+
+            <!-- Image Gallery -->
+            <div class="about-images">
+                <img src="images/shop1.jpg" alt="Inside Emasatsi Electronics shop">
+                <img src="images/shop2.jpg" alt="Display of electronics products">
+            </div>
+
             <h3>Our Mission</h3>
-            <p>Our mission is to make quality electronics accessible to everyone. We carefully select our products to ensure durability, performance, and affordability.</p>
-            
+            <p>
+                Our mission is to make quality electronics accessible to everyone. We carefully select 
+                our products to ensure durability, performance, and value for money.
+            </p>
+
             <h3>Why Choose Us?</h3>
-            <ul>
-                <li>Wide range of electronics for all your needs.</li>
-                <li>Competitive prices without compromising on quality.</li>
-                <li>Friendly and knowledgeable staff ready to assist you.</li>
-                <li>Convenient location in Emasatsi Market.</li>
+            <ul class="benefits">
+                <li>Wide range of electronics for everyday needs</li>
+                <li>Affordable prices without compromising quality</li>
+                <li>Friendly and helpful customer service</li>
+                <li>Convenient location in Emasatsi Market</li>
             </ul>
-            
-            <p>We are committed to providing excellent service and helping our customers find the perfect electronics for their needs. <a href="index.html">Back to Home</a></p>
+
+            <!-- Trust Section -->
+            <div class="trust">
+                <p><strong>✔ Trusted by hundreds of happy customers</strong></p>
+                <p><strong>✔ Fast response via WhatsApp</strong></p>
+            </div>
+
+            <p class="back-home">
+                <a href="index.html">← Back to Home</a>
+            </p>
+
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
+        </div>
     </footer>
+
 </body>
 </html>
+
