@@ -1,7 +1,6 @@
-css id="final-master-css"
-
+```css
 /* =========================
-   RESET + BASE
+   RESET
 ========================= */
 * {
     margin: 0;
@@ -9,6 +8,9 @@ css id="final-master-css"
     box-sizing: border-box;
 }
 
+/* =========================
+   BASE
+========================= */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f4f4;
@@ -17,13 +19,13 @@ body {
 }
 
 /* =========================
-   CONTAINER (FIXES EDGE ISSUE)
+   CONTAINER (FIX SPACING ISSUE)
 ========================= */
 .container {
     width: 92%;
     max-width: 1200px;
     margin: auto;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 /* =========================
@@ -37,16 +39,16 @@ header {
 
 header h1 {
     text-align: center;
-    margin-bottom: 10px;
     font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-    gap: 20px;
     flex-wrap: wrap;
+    list-style: none;
+    gap: 18px;
 }
 
 nav a {
@@ -63,7 +65,7 @@ nav a.active {
 }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 #hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -76,13 +78,12 @@ nav a.active {
 }
 
 #hero h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 10px;
 }
 
 #hero p {
     margin-bottom: 15px;
-    font-size: 1.1rem;
 }
 
 .hero-btn {
@@ -100,7 +101,7 @@ nav a.active {
 }
 
 /* =========================
-   SECTIONS SPACING
+   SECTIONS
 ========================= */
 section {
     margin: 40px 0;
@@ -120,8 +121,8 @@ section {
     background: #fff;
     padding: 15px;
     border-radius: 12px;
-    text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
     display: flex;
     flex-direction: column;
     min-height: 340px;
@@ -149,7 +150,7 @@ section {
 }
 
 /* =========================
-   BADGES (NEW FEATURE)
+   BADGES
 ========================= */
 .badge {
     display: inline-block;
@@ -165,7 +166,7 @@ section {
 .badge.best { background: #00C853; }
 
 /* =========================
-   ADD TO CART BUTTON (NEW FEATURE)
+   ADD TO CART BUTTON
 ========================= */
 .add-to-cart {
     margin-top: 8px;
@@ -185,7 +186,7 @@ section {
 }
 
 /* =========================
-   BUY NOW BUTTON (WHATSAPP)
+   WHATSAPP BUTTON (BUY NOW)
 ========================= */
 .order-btn {
     margin-top: 8px;
@@ -225,16 +226,52 @@ section {
 }
 
 /* =========================
-   ABOUT + CONTACT SECTIONS
+   ABOUT + CONTACT FIXED ALIGNMENT
 ========================= */
 #about,
-#about-preview,
 #contact {
     background: #fff;
-    padding: 30px;
+    padding: 40px 25px;
     border-radius: 12px;
-    text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+/* HEADINGS */
+#about h2,
+#contact h2 {
+    text-align: center;
+    color: #00C853;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPHS */
+#about p,
+#contact p {
+    margin-bottom: 12px;
+    color: #444;
+}
+
+/* CONTACT INFO ALIGNMENT FIX */
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ICONS */
+.contact-info i {
+    color: #00C853;
+    width: 20px;
 }
 
 /* =========================
@@ -243,8 +280,8 @@ section {
 .categories-grid {
     display: flex;
     justify-content: center;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .category-card {
@@ -301,7 +338,7 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
     #hero h2 {
@@ -327,4 +364,4 @@ footer {
         font-size: 1rem;
     }
 }
-
+```
