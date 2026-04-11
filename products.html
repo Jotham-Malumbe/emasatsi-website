@@ -1,3 +1,4 @@
+```html id="cart-products-page"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,168 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Emasatsi Electronics</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* ===== Product Search Bar ===== */
-        .product-search {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .product-search input {
-            width: 90%;
-            max-width: 400px;
-            padding: 10px 14px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .product-search input:focus {
-            border-color: #00C853;
-            box-shadow: 0 0 6px rgba(0, 200, 83, 0.3);
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254115652612" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
-        Chat with us on WhatsApp
-    </a>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254115652612" class="whatsapp-float">
+    Chat on WhatsApp
+</a>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Emasatsi Electronics</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <h1>Emasatsi Electronics</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="container">
+
+    <section id="products">
+
+        <h2>Our Products</h2>
+        <p>Browse products and add items to your cart.</p>
+
+        <!-- SEARCH -->
+        <div class="product-search">
+            <input type="text" id="searchInput" placeholder="Search products...">
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <section id="products">
-            <h2>Our Products</h2>
-            <p>Explore our wide range of electronics, carefully selected to meet your everyday needs.</p>
+        <!-- PRODUCT GRID -->
+        <div class="products-grid">
 
-            <!-- ===== Search Bar ===== -->
-            <div class="product-search">
-                <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
-            </div>
+            <!-- PRODUCT 1 -->
+            <article class="product" data-name="Earphones" data-price="800">
+                <span class="badge hot">HOT</span>
+                <img src="images/earphones.jpg" alt="Earphones">
+                <h3>High-quality Earphones</h3>
+                <p class="price">KES 800</p>
+                <p>Clear sound and deep bass for daily use.</p>
 
-            <div class="products-grid">
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="https://wa.me/254115652612?text=I%20want%20Earphones" class="order-btn">Buy Now</a>
+            </article>
 
-                <article class="product">
-                    <img src="images/earphones.jpg" alt="High-quality Earphones">
-                    <h3>High-quality Earphones</h3>
-                    <p class="price">KES 800</p>
-                    <p>Comfortable and durable earphones with crystal-clear sound.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20High-quality%20Earphones" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+            <!-- PRODUCT 2 -->
+            <article class="product" data-name="LED Torch" data-price="600">
+                <span class="badge best">BEST</span>
+                <img src="images/torch.jpg" alt="Torch">
+                <h3>LED Torch</h3>
+                <p class="price">KES 600</p>
+                <p>Bright rechargeable torch for all uses.</p>
 
-                <article class="product">
-                    <img src="images/torch.jpg" alt="LED Torch">
-                    <h3>LED Torch</h3>
-                    <p class="price">KES 600</p>
-                    <p>Bright and long-lasting torch for outdoor and home use.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20LED%20Torch" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="https://wa.me/254115652612?text=I%20want%20Torch" class="order-btn">Buy Now</a>
+            </article>
 
-                <article class="product">
-                    <img src="images/earpods.jpg" alt="Wireless Earpods">
-                    <h3>Wireless Earpods</h3>
-                    <p class="price">KES 1,500</p>
-                    <p>Stylish wireless earpods with excellent battery life.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Wireless%20Earpods" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+            <!-- PRODUCT 3 -->
+            <article class="product" data-name="Wireless Earpods" data-price="1500">
+                <span class="badge new">NEW</span>
+                <img src="images/earpods.jpg" alt="Earpods">
+                <h3>Wireless Earpods</h3>
+                <p class="price">KES 1,500</p>
+                <p>Latest Bluetooth technology with long battery life.</p>
 
-                <article class="product">
-                    <img src="images/powerbank.jpg" alt="Portable Power Bank">
-                    <h3>Portable Power Bank</h3>
-                    <p class="price">KES 1,800</p>
-                    <p>Keep your devices charged anywhere with this reliable power bank.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Power%20Bank" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="https://wa.me/254115652612?text=I%20want%20Earpods" class="order-btn">Buy Now</a>
+            </article>
 
-                <article class="product">
-                    <img src="images/bluetooth_speaker.jpg" alt="Bluetooth Speaker">
-                    <h3>Bluetooth Speaker</h3>
-                    <p class="price">KES 2,000</p>
-                    <p>Portable speaker with deep bass and powerful sound.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20Bluetooth%20Speaker" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+            <!-- PRODUCT 4 -->
+            <article class="product" data-name="Power Bank 10000mAh" data-price="1800">
+                <img src="images/powerbank.jpg" alt="Power Bank">
+                <h3>Power Bank 10,000mAh</h3>
+                <p class="price">KES 1,800</p>
+                <p>Fast charging portable power bank.</p>
 
-                <article class="product">
-                    <img src="images/usb_cable.jpg" alt="USB Cable">
-                    <h3>USB Cable</h3>
-                    <p class="price">KES 300</p>
-                    <p>Strong and fast charging cable for everyday use.</p>
-                    <a href="https://wa.me/254115652612?text=Hello%20I%20want%20USB%20Cable" target="_blank" rel="noopener noreferrer" class="order-btn">Order on WhatsApp</a>
-                </article>
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="https://wa.me/254115652612?text=I%20want%20Power%20Bank" class="order-btn">Buy Now</a>
+            </article>
 
-                <!-- Add the rest of your product articles here in the same format -->
+            <!-- PRODUCT 5 -->
+            <article class="product" data-name="Bluetooth Speaker" data-price="2000">
+                <img src="images/speaker.jpg" alt="Speaker">
+                <h3>Bluetooth Speaker</h3>
+                <p class="price">KES 2,000</p>
+                <p>Deep bass portable speaker.</p>
 
-            </div>
-        </section>
-    </main>
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="https://wa.me/254115652612?text=I%20want%20Speaker" class="order-btn">Buy Now</a>
+            </article>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
-    </footer>
+            <!-- PRODUCT 6 -->
+            <article class="product" data-name="USB Cable" data-price="300">
+                <img src="images/usb.jpg" alt="USB Cable">
+                <h3>Fast Charging USB Cable</h3>
+                <p class="price">KES 300</p>
+                <p>Durable and fast charging cable.</p>
 
-    <!-- ===== JavaScript for Search Filter ===== -->
-    <script>
-    function filterProducts() {
-        const input = document.getElementById('searchInput');
-        const filter = input.value.toLowerCase();
-        const products = document.querySelectorAll('.products-grid .product');
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="https://wa.me/254115652612?text=I%20want%20USB%20Cable" class="order-btn">Buy Now</a>
+            </article>
 
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            const description = product.querySelector('p:not(.price)').textContent.toLowerCase();
+        </div>
 
-            if(title.includes(filter) || description.includes(filter)) {
-                product.style.display = '';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    }
-    </script>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
+</footer>
+
+<!-- SEARCH SCRIPT -->
 <script>
-// ===== Product Search Function =====
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search-input');
-    const products = document.querySelectorAll('.product');
+const searchInput = document.getElementById('searchInput');
+const products = document.querySelectorAll('.product');
 
-    // Check if searchInput exists on the page
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = searchInput.value.toLowerCase();
+searchInput.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
 
-            products.forEach(product => {
-                const title = product.querySelector('h3').textContent.toLowerCase();
-                const description = product.querySelector('p').textContent.toLowerCase();
+    products.forEach(product => {
+        const title = product.querySelector('h3').textContent.toLowerCase();
+        const desc = product.querySelector('p').textContent.toLowerCase();
 
-                if (title.includes(query) || description.includes(query)) {
-                    product.style.display = 'flex'; // show product
-                } else {
-                    product.style.display = 'none'; // hide product
-                }
-            });
-        });
-    }
+        product.style.display =
+            (title.includes(value) || desc.includes(value)) ? 'flex' : 'none';
+    });
 });
 </script>
+
 </body>
 </html>
+```
