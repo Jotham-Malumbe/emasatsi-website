@@ -1,138 +1,175 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emasatsi Baha Electronics Shop</title>
+    <title>Emasatsi Electronics</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/254115652612" target="_blank" class="whatsapp-float">
-        Chat with us on WhatsApp
-    </a>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254115652612" target="_blank" class="whatsapp-float">
+    Chat on WhatsApp
+</a>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Baha Electronics</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <h1>Baha Electronics</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="container">
+
+    <!-- HERO -->
+    <section id="hero">
+        <h2>Quality Electronics at Emasatsi Market</h2>
+        <p>Affordable earphones, speakers, chargers and more.</p>
+        <a href="products.html" class="hero-btn">Shop Now</a>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section id="featured-products">
+
+        <h2>Popular Products</h2>
+
+        <!-- SEARCH -->
+        <div class="product-search">
+            <input type="text" id="searchInput" placeholder="Search products...">
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="container">
+        <!-- GRID -->
+        <div class="products-grid">
 
-        <!-- Hero Section -->
-        <section id="hero">
-            <h2>Quality Electronics at Emasatsi Market</h2>
-            <p>Discover the best earphones, torches, earpods, and more at unbeatable prices.</p>
-            <a href="products.html" class="hero-btn">Shop Now</a>
-        </section>
+            <!-- PRODUCT -->
+            <article class="product">
+                <img src="images/earphones.jpg" alt="Earphones">
 
-        <!-- Featured Products -->
-        <section id="featured-products">
-            <h2>Our Popular Products</h2>
-
-            <div class="product-search">
-                <input type="text" id="searchInput" placeholder="Search products...">
-            </div>
-
-            <div class="products-grid">
-
-                <article class="product">
-                    <img src="images/earphones.jpg" alt="Earphones">
+                <div class="product-info">
                     <h3>High-quality Earphones</h3>
                     <p class="price">KES 800</p>
-                    <p>Comfortable and durable earphones with crystal-clear sound.</p>
-                    <a href="https://wa.me/254115652612?text=I%20want%20Earphones" class="order-btn">Order on WhatsApp</a>
-                </article>
+                    <p class="description">Clear sound and comfortable fit.</p>
 
-                <article class="product">
-                    <img src="images/torch.jpg" alt="Torch">
+                    <div class="product-actions">
+                        <a href="products.html" class="order-btn">View</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT -->
+            <article class="product">
+                <img src="images/torch.jpg" alt="Torch">
+
+                <div class="product-info">
                     <h3>LED Torch</h3>
                     <p class="price">KES 600</p>
-                    <p>Bright and long-lasting torch for outdoor and home use.</p>
-                    <a href="https://wa.me/254115652612?text=I%20want%20LED%20Torch" class="order-btn">Order on WhatsApp</a>
-                </article>
+                    <p class="description">Bright and long-lasting torch.</p>
 
-                <article class="product">
-                    <img src="images/earpods.jpg" alt="Earpods">
+                    <div class="product-actions">
+                        <a href="products.html" class="order-btn">View</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT -->
+            <article class="product">
+                <img src="images/earpods.jpg" alt="Earpods">
+
+                <div class="product-info">
                     <h3>Wireless Earpods</h3>
                     <p class="price">KES 1,500</p>
-                    <p>Stylish wireless earpods with excellent battery life.</p>
-                    <a href="https://wa.me/254115652612?text=I%20want%20Earpods" class="order-btn">Order on WhatsApp</a>
-                </article>
+                    <p class="description">Bluetooth earpods with long battery.</p>
 
-            </div>
-        </section>
+                    <div class="product-actions">
+                        <a href="products.html" class="order-btn">View</a>
+                    </div>
+                </div>
+            </article>
 
-        <!-- Categories -->
-        <section id="categories-preview">
-            <h2>Shop by Category</h2>
-            <div class="categories-grid">
-                <a href="products.html#earphones" class="category-card">Earphones</a>
-                <a href="products.html#powerbanks" class="category-card">Power Banks</a>
-                <a href="products.html#speakers" class="category-card">Speakers</a>
-            </div>
-        </section>
+            <!-- PRODUCT -->
+            <article class="product">
+                <img src="images/powerbank.jpg" alt="Powerbank">
 
-        <!-- About Preview -->
-        <section id="about-preview">
-            <h2>About Us</h2>
-            <p>Located in Emasatsi Market, we provide affordable and quality electronics.</p>
-            <a href="about.html" class="cta-btn">Read More</a>
-        </section>
+                <div class="product-info">
+                    <h3>Power Bank</h3>
+                    <p class="price">KES 1,800</p>
+                    <p class="description">Fast charging portable battery.</p>
 
-        <!-- Testimonials -->
-        <section id="testimonials">
-            <h2>What Customers Say</h2>
+                    <div class="product-actions">
+                        <a href="products.html" class="order-btn">View</a>
+                    </div>
+                </div>
+            </article>
 
-            <div class="testimonial">
-                <p>"Fast delivery and excellent earphones! – Jane K."</p>
-            </div>
+        </div>
+    </section>
 
-            <div class="testimonial">
-                <p>"High-quality products and amazing service. – Samuel M."</p>
-            </div>
-        </section>
+    <!-- CATEGORIES -->
+    <section id="categories-preview">
+        <h2>Shop by Category</h2>
 
-    </main>
+        <div class="categories-grid">
+            <a href="products.html" class="category-card">Earphones</a>
+            <a href="products.html" class="category-card">Speakers</a>
+            <a href="products.html" class="category-card">Power Banks</a>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Emasatsi Electronics. All Rights Reserved.</p>
-        <p>Contact us on <a href="https://wa.me/254115652612">WhatsApp</a></p>
-    </footer>
+    <!-- ABOUT -->
+    <section id="about-preview">
+        <h2>About Us</h2>
+        <p>We provide affordable and reliable electronics at Emasatsi Market.</p>
+        <a href="about.html" class="hero-btn">Read More</a>
+    </section>
 
-    <!-- JS -->
-    <script>
-        const searchInput = document.getElementById('searchInput');
-        const products = document.querySelectorAll('.product');
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <h2>Customer Reviews</h2>
 
-        searchInput.addEventListener('input', function () {
-            const query = this.value.toLowerCase();
+        <div class="testimonial">
+            <p>"Great products and fast service!"</p>
+        </div>
 
-            products.forEach(product => {
-                const title = product.querySelector('h3').textContent.toLowerCase();
-                const desc = product.querySelector('p').textContent.toLowerCase();
+        <div class="testimonial">
+            <p>"Affordable and high quality electronics."</p>
+        </div>
+    </section>
 
-                product.style.display =
-                    (title.includes(query) || desc.includes(query)) ? 'flex' : 'none';
-            });
-        });
-    </script>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Emasatsi Electronics</p>
+</footer>
+
+<!-- SEARCH SCRIPT -->
+<script>
+const searchInput = document.getElementById('searchInput');
+const products = document.querySelectorAll('.product');
+
+searchInput.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+
+    products.forEach(product => {
+        const title = product.querySelector('h3').textContent.toLowerCase();
+        const desc = product.querySelector('.description').textContent.toLowerCase();
+
+        product.style.display =
+            (title.includes(value) || desc.includes(value)) ? '' : 'none';
+    });
+});
+</script>
 
 </body>
 </html>
-
