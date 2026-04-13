@@ -1,46 +1,67 @@
 // =======================
-// CART SYSTEM (NEW FEATURE)
+// CART SYSTEM (IMPROVED)
 // =======================
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Create cart UI
+// =======================
+// CREATE CART UI
+// =======================
 const cartBox = document.createElement("div");
 cartBox.id = "cart-box";
+
 cartBox.innerHTML = `
     <h3>🛒 Your Cart</h3>
     <div id="cart-items"></div>
     <p id="cart-total">Total: KES 0</p>
+
     <button id="checkout-btn">Checkout on WhatsApp</button>
+    <button id="clear-cart">Clear Cart</button>
     <button id="close-cart">Close</button>
 `;
+
 document.body.appendChild(cartBox);
 
-// Style cart box dynamically (no CSS required but you can move it later)
-cartBox.style.position = "fixed";
-cartBox.style.bottom = "80px";
-cartBox.style.right = "20px";
-cartBox.style.width = "260px";
-cartBox.style.background = "#fff";
-cartBox.style.padding = "15px";
-cartBox.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
-cartBox.style.borderRadius = "10px";
-cartBox.style.display = "none";
-cartBox.style.zIndex = "1000";
+// =======================
+// OPEN CART BUTTON
+// =======================
+const openCartBtn = document.createElement("button");
+openCartBtn.textContent = "🛒";
+openCartBtn.id = "open-cart-btn";
+document.body.appendChild(openCartBtn);
+
+// Style button (quick minimal)
+openCartBtn.style.position = "fixed";
+openCartBtn.style.bottom = "20px";
+openCartBtn.style.left = "20px";
+openCartBtn.style.padding = "12px";
+openCartBtn.style.borderRadius = "50%";
+openCartBtn.style.border = "none";
+openCartBtn.style.background = "#00C853";
+openCartBtn.style.color = "#fff";
+openCartBtn.style.fontSize = "18px";
+openCartBtn.style.zIndex = "1000";
 
 // =======================
-// ADD TO CART BUTTONS
+// ADD TO CART
 // =======================
 document.querySelectorAll(".add-to-cart").forEach(button => {
     button.addEventListener("click", function () {
-        const product = this.closest(".product");
 
+        const product = this.closest(".product");
         const name = product.dataset.name;
         const price = parseInt(product.dataset.price);
 
-        cart.push({ name, price });
+        // Check if item exists
+        const existing = cart.find(item => item.name === name);
 
-        alert(name + " added to cart!");
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ name, price, qty: 1 });
+        }
+
+        saveCart();
         updateCart();
         cartBox.style.display = "block";
     });
@@ -54,58 +75,88 @@ function updateCart() {
     const cartTotal = document.getElementById("cart-total");
 
     cartItems.innerHTML = "";
-
     let total = 0;
 
     cart.forEach((item, index) => {
-        total += item.price;
+        total += item.price * item.qty;
 
         const div = document.createElement("div");
-        div.style.display = "flex";
-        div.style.justifyContent = "space-between";
-        div.style.marginBottom = "5px";
 
         div.innerHTML = `
-            <span>${item.name}</span>
-            <span>KES ${item.price}</span>
-            <button onclick="removeItem(${index})">x</button>
+            <span>${item.name} x${item.qty}</span>
+            <span>KES ${item.price * item.qty}</span>
+            <button data-index="${index}" class="remove-btn">x</button>
         `;
 
         cartItems.appendChild(div);
     });
 
     cartTotal.textContent = "Total: KES " + total;
+
+    // Attach remove events
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const index = this.dataset.index;
+            cart.splice(index, 1);
+            saveCart();
+            updateCart();
+        });
+    });
 }
 
 // =======================
-// REMOVE ITEM
+// SAVE CART
 // =======================
-function removeItem(index) {
-    cart.splice(index, 1);
-    updateCart();
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 // =======================
-// CLOSE CART
+// OPEN / CLOSE CART
 // =======================
+openCartBtn.addEventListener("click", () => {
+    cartBox.style.display = "block";
+});
+
 document.getElementById("close-cart").addEventListener("click", () => {
     cartBox.style.display = "none";
 });
 
 // =======================
-// CHECKOUT TO WHATSAPP
+// CLEAR CART
+// =======================
+document.getElementById("clear-cart").addEventListener("click", () => {
+    cart = [];
+    saveCart();
+    updateCart();
+});
+
+// =======================
+// CHECKOUT (WHATSAPP)
 // =======================
 document.getElementById("checkout-btn").addEventListener("click", () => {
-    let message = "Hello, I want to order:%0A";
 
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let message = "Hello, I want to order:%0A%0A";
     let total = 0;
 
     cart.forEach(item => {
-        message += `- ${item.name} (KES ${item.price})%0A`;
-        total += item.price;
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+
+        message += `- ${item.name} x${item.qty} (KES ${itemTotal})%0A`;
     });
 
     message += `%0ATotal: KES ${total}`;
 
     window.open(`https://wa.me/254115652612?text=${message}`, "_blank");
 });
+
+// =======================
+// INIT
+// =======================
+updateCart();
